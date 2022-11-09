@@ -66,7 +66,7 @@
                         <div class="logo-header">
                             <div class="logo-header-inner logo-header-one">
                                 <a href="{{ url('/') }}">
-                                    RapidJobs
+                                    <strong>RapidJobs</strong>
                                 </a>
                             </div>
                         </div>  
