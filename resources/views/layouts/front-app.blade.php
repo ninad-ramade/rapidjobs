@@ -66,8 +66,7 @@
                         <div class="logo-header">
                             <div class="logo-header-inner logo-header-one">
                                 <a href="{{ url('/') }}">
-                                    <img src="{{ asset('assets/front_assets/images/logo-light-3.png') }}" alt="" class="default-scroll-show">
-                                    <img src="{{ asset('assets/front_assets/images/logo-dark.png') }}" alt="" class="on-scroll-show">
+                                    RapidJobs
                                 </a>
                             </div>
                         </div>  
