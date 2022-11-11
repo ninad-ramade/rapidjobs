@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Front\HomeController;
+use App\Http\Controllers\realestate\RealEstateHomeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,10 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
-/** User Front End Routes Start Here */
+/** User Rapid Jobs Front End Routes Start Here */
     Route::get('/', [HomeController::class, 'index']);
-/** User Front End Routes End Here */
+/** User Rapid Jobs Front End Routes End Here */
+
+/** User RealEstate Front End Routes Start Here */
+Route::get('/realestate', [RealEstateHomeController::class, 'index']);
+/** User RealEstate Front End Routes End Here */
