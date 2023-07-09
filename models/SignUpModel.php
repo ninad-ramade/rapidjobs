@@ -17,18 +17,18 @@ class SignUpModel extends Database {
             $this->response['message'] = SignupErrorMessages::_CANDIDATE_NOT_FOUND_;
             return $this->response;
         }
-        //$password = $this->generatePassword();
-        $password = 'rapid123';
+        $password = $this->generatePassword();
+        //$password = 'rapid123';
         $query = 'UPDATE candidates set loginPassword = "' . md5($password) . '" WHERE id = ' . $candidate['id'];
         $this->update($query);
         //Send email with credentials.
         $email = new Email();
         $content = 'Hi, ' . $candidate['name'] . ',<br/><br/>Please find below credentials to login to RapidJobs.<br/><br/>Link: <a href="' . baseurl . '" target="blank"> ' . baseurl . '</a><br/><strong>Username:</strong> ' . $candidate['email'] . '<br/><strong>Password:</strong> ' . $password;
-        /* $mailResponse = $email->sendEmail($candidate['email'], 'RapidJobs Login Credentials', $content, '', 'kerlaraju@rapidjobs.co.in', fromMail, fromName);
+        $mailResponse = $email->sendEmail($candidate['email'], 'RapidJobs Login Credentials', $content, '', 'kerlaraju@rapidjobs.co.in', fromMail, fromName);
         if(!$mailResponse) {
             $this->response['message'] = EmailErrorMessages::_CREDENTIALS_EMAIL_SENDING_FAILED_;
             return $this->response;
-        } */
+        }
         $this->response['status'] = 1;
         $this->response['data'] = ['candidate' => $candidate];
         $this->response['message'] = EmailSuccessMessages::_CREDENTIALS_EMAIL_SENT_SUCCESS_;
