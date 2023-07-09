@@ -42,6 +42,7 @@ class SignUpModel extends Database {
     public function login($username, $password) {
         $query = "SELECT * FROM candidates WHERE email = '" . $username . "'";
         $candidate = $this->fetchOne($query);
+        var_dump($candidate);exit;
         if(empty($candidate)) {
             $this->response['status'] = 0;
             $this->response['message'] = SignupErrorMessages::_LOGIN_USER_NOT_FOUND_;
