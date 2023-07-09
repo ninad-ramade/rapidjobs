@@ -60,7 +60,7 @@ class SignUpModel extends Database {
         return $this->response;
     }
     
-    public function logout($username, $password) {
+    public function logout() {
         unset($_SESSION['user']);
         session_destroy();
         $this->response['status'] = 1;
