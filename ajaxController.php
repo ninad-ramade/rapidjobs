@@ -21,6 +21,7 @@ switch (strtolower($input['action'])) {
     case 'login':
         $signUpController = new SignUpController();
         $signUpResponse = $signUpController->login($input['username'], $input['password']);
+        var_dump($signUpResponse);exit;
         echo json_encode($signUpResponse);exit;
         break;
     case 'logout':

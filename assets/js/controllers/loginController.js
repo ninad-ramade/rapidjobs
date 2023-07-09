@@ -25,7 +25,7 @@ app.controller('loginController', function loginController($scope, Validation, a
 	                $scope.loginMessage = responseData.message;
 	            }
 				$("#sign_up_popup2").modal('toggle');
-				window.location.reload();
+				//window.location.reload();
 	        });
 		}
 	}
