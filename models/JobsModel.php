@@ -15,12 +15,16 @@ class JobsModel extends Database {
         return $this->response;
     }
     
-    public function formatJobs(&$jobs) {
-        foreach($jobs as &$eachJob) {
+    public function formatJobs(&$jobs, $location = null) {
+        foreach($jobs as $key => &$eachJob) {
             $workLocation = array_filter(explode(',', $eachJob['worklocation']));
             $skills = array_filter(explode(',', $eachJob['skills']));
             $query = "SELECT location FROM locations WHERE id IN (" . implode(',',$workLocation) . ")";
             $locations = $this->fetchAll($query);
+            if(!empty($location) && !in_array(strtolower($location), array_map('strtolower', array_column($locations, 'location')))) {
+                unset($jobs[$key]);
+                continue;
+            }
             $query = "SELECT skill FROM skills WHERE id IN (" . implode(',',$skills) . ")";
             $skills = $this->fetchAll($query);
             $eachJob['worklocation'] = implode(', ', array_column($locations, 'location'));
@@ -64,7 +68,7 @@ class JobsModel extends Database {
     public function getJobs($input) {
         $query = "SELECT vendor_req.*, vendor_clients.clientname FROM vendor_req LEFT JOIN vendor_clients ON vendor_req.CLIENTID = vendor_clients.clientid WHERE Role like '%" . $input['jobTitle'] . "%' AND vendor_req.Active = 'Y' ORDER BY reqdate DESC";
         $jobs = $this->fetchAll($query);
-        $this->formatJobs($jobs);
+        $this->formatJobs($jobs, $input['jobLocation']);
         $this->response['status'] = 1;
         $this->response['data'] = ['jobs' => $jobs];
         return $this->response;
