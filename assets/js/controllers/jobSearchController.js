@@ -9,6 +9,7 @@ app.controller('jobSearchController', function jobSearchController($scope, Valid
 	};
 	$scope.jobsearch = false;
 	$scope.getJobs = function() {
+		$scope.jobs = {};
 		document.getElementsByTagName('header')[0].classList.add('classic-header');
 		$scope.jobsearch = true;
 		var url = baseUrl + 'ajaxController.php';
