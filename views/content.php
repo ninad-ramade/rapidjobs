@@ -1,8 +1,8 @@
 <!-- CONTENT START -->
-<div class="page-content">
+<div class="page-content" ng-controller="jobSearchController">
 
     <!--Banner Start-->
-    <div class="twm-home3-banner-section site-bg-white bg-cover" style="background-image:url('assets/images/home-3/banner1.jpg')">
+    <div class="twm-home3-banner-section site-bg-white bg-cover" ng-hide="jobsearch" style="background-image:url('assets/images/home-3/banner1.jpg')">
         <div class="twm-home3-inner-section">
             <div class="twm-bnr-mid-section">
                 <div class="twm-bnr-title-large">Find Top IT Jobs</div>
@@ -13,17 +13,14 @@
                     <form>
                         <div class="row">
                             <!--Title-->
-                            <div class="form-group col-xl-3 col-lg-6 col-md-6">
+                            <div class="form-group col-xl-6 col-lg-6 col-md-6">
                                 <label>What</label>
-                                <select class="wt-search-bar-select selectpicker"  data-live-search="true" title="" id="j-Job_Title" data-bv-field="size">
-                                    <option disabled selected value="">Select Category</option>
-                                    <option selected>Job Title</option>
-                                    <option>Web Designer</option>
-                                    <option>Developer</option>
-                                    <option>Acountant</option>
-                                </select>
+                                <div class="twm-inputicon-box">
+                                	<input name="jobTitle" type="text" ng-model="jobSearch.jobTitle.value" class="form-control" placeholder="Job Title">
+                               	</div>
                             </div>
 
+                            <?php /* ?>
                             <!--All Category-->
                             <div class="form-group col-xl-4 col-lg-6 col-md-6">
                                 <label>Type</label>
@@ -35,19 +32,19 @@
                                     <option>Acountant</option>
                                 </select>
                             </div>
-
+                            <?php */ ?>
                             <!--Location-->
-                            <div class="form-group col-xl-3 col-lg-6 col-md-6">
+                            <div class="form-group col-xl-4 col-lg-4 col-md-4">
                                 <label>Location</label>
                                 <div class="twm-inputicon-box">
-                                    <input name="username" type="text" required class="form-control" placeholder="Location">
+                                    <input name="jobLocation" type="text" ng-model="jobSearch.jobLocation.value" class="form-control" placeholder="Location">
                                     <i class="twm-input-icon fas fa-map-marker-alt"></i>
                                 </div>
                             </div>
 
                             <!--Find job btn-->
                             <div class="form-group col-xl-2 col-lg-6 col-md-6">
-                                <button type="button" class="site-button">Find Job</button>
+                                <button type="button" class="site-button" ng-click="getJobs()">Find Job</button>
                             </div>
 
                         </div>
@@ -110,7 +107,7 @@
     <!--Banner End-->
 
     <!-- TOP COMPANIES START -->
-    <div class="section-full p-t120 p-b90 site-bg-white twm-companies-wrap">
+    <div class="section-full p-t120 p-b90 site-bg-white twm-companies-wrap" ng-hide="jobsearch">
           
         <!-- TITLE START-->
         <div class="section-head center wt-small-separator-outer">
@@ -243,7 +240,7 @@
     <!-- TOP COMPANIES END -->
 
     <!-- HOW IT WORK SECTION START -->
-    <div class="section-full p-t120 p-b90 site-bg-gray twm-how-it-work-area">
+    <div class="section-full p-t120 p-b90 site-bg-gray twm-how-it-work-area" ng-hide="jobsearch">
                 
         <div class="container">
 
@@ -372,7 +369,7 @@
     <!-- FEATURED SECTION END -->
 
     <!-- JOB POST START -->
-    <div class="section-full p-t120 p-b90 site-bg-gray twm-bg-ring-wrap2" ng-controller="hotJobsController" ng-cloak>
+    <div class="section-full p-t120 p-b90 site-bg-gray twm-bg-ring-wrap2">
         <div class="twm-bg-ring-right"></div>
         <div class="twm-bg-ring-left"></div>
         <div class="container">
@@ -383,9 +380,9 @@
                         <!-- TITLE START-->
                         <div class="section-head left wt-small-separator-outer">
                             <div class="wt-small-separator site-text-primary">
-                            <div>All Jobs Post</div>                                
+                            <div ng-class="jobsearch ? 'font24' : ''">{{jobsearch ? jobSearch.jobTitle.value + ' Jobs' : 'All Job Posts'}}</div>                                
                             </div>
-                            <h2 class="wt-title">Find Your Career You Deserve it</h2>
+                            <h2 class="wt-title" ng-hide="jobsearch">Find Your Career You Deserve it</h2>
                         </div>                  
                         <!-- TITLE END-->
                     </div>
@@ -398,7 +395,7 @@
             <div class="section-content">
                <div class="twm-jobs-grid-wrap">
                    <div class="row">
-                        <div class="col-lg-6 col-md-6" ng-repeat="job in hotJobs">
+                        <div class="col-lg-6 col-md-6" ng-repeat="job in jobs">
                             <div class="twm-jobs-grid-style1 m-b0">
                             	<?php /* ?>
                                 <div class="twm-media">

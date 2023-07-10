@@ -7,8 +7,15 @@ class JobsModel extends Database {
     private $response = ['status' => 0, 'data' => [], 'message' => ''];
     
     public function getHotJobs() {
-        $query = "SELECT vendor_req.*, vendor_clients.clientname FROM vendor_req LEFT JOIN vendor_clients ON vendor_req.CLIENTID = vendor_clients.clientid WHERE vendor_clients.clientname != '' ORDER BY reqdate DESC, BUDGETTO DESC LIMIT 4";
+        $query = "SELECT vendor_req.*, vendor_clients.clientname FROM vendor_req LEFT JOIN vendor_clients ON vendor_req.CLIENTID = vendor_clients.clientid WHERE vendor_clients.clientname != '' AND vendor_req.Active = 'Y' ORDER BY reqdate DESC, BUDGETTO DESC LIMIT 4";
         $jobs = $this->fetchAll($query);
+        $this->formatJobs($jobs);
+        $this->response['status'] = 1;
+        $this->response['data'] = ['jobs' => $jobs];
+        return $this->response;
+    }
+    
+    public function formatJobs(&$jobs) {
         foreach($jobs as &$eachJob) {
             $workLocation = array_filter(explode(',', $eachJob['worklocation']));
             $skills = array_filter(explode(',', $eachJob['skills']));
@@ -21,9 +28,7 @@ class JobsModel extends Database {
             $eachJob['skills'] = array_column($skills, 'skill');
             $eachJob['reqdate'] = $this->time_elapsed_string($eachJob['reqdate']);
         }
-        $this->response['status'] = 1;
-        $this->response['data'] = ['jobs' => $jobs];
-        return $this->response;
+        return $jobs;
     }
     
     public function time_elapsed_string($datetime, $full = false) {
@@ -53,5 +58,15 @@ class JobsModel extends Database {
         
         if (!$full) $string = array_slice($string, 0, 1);
         return $string ? implode(', ', $string) . ' ago' : 'just now';
+    }
+    
+    public function getJobs($input) {
+        $query = "SELECT vendor_req.*, vendor_clients.clientname FROM vendor_req LEFT JOIN vendor_clients ON vendor_req.CLIENTID = vendor_clients.clientid WHERE Role like '%" . $input['jobTitle'] . "%' AND vendor_req.Active = 'Y' ORDER BY reqdate DESC";
+        $jobs = $this->fetchAll($query);
+        var_dump($jobs);exit;
+        $this->formatJobs($jobs);
+        $this->response['status'] = 1;
+        $this->response['data'] = ['jobs' => $jobs];
+        return $this->response;
     }
 }

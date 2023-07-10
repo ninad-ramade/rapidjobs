@@ -1,5 +1,5 @@
 <!-- HEADER START -->
-<header  class="site-header header-style-light mobile-sider-drawer-menu">
+<header  class="site-header header-style-light mobile-sider-drawer-menu <?php if(!empty($_GET['action'])) { echo 'classic-header'; }?>">
 
     <div class="sticky-header main-bar-wraper  navbar-expand-lg">
         <div class="main-bar">  
@@ -8,7 +8,7 @@
         
                 <div class="logo-header">
                     <div class="logo-header-inner logo-header-one">
-                        <a href="{{ url('/')">
+                        <a href="/">
                             <strong>RapidJobs</strong>
                         </a>
                     </div>

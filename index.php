@@ -71,9 +71,10 @@ session_start();
     <script src="assets/js/controllers/signUpController.js"></script>
     <script src="assets/js/controllers/loginController.js"></script>
     <script src="assets/js/controllers/logoutController.js"></script>
-    <script src="assets/js/controllers/hotJobsController.js"></script>
+    <script src="assets/js/controllers/jobSearchController.js"></script>
     <script>
     var baseUrl = '<?php echo baseurl; ?>';
+    var action = '<?php echo $_GET['action']; ?>';
     </script>
     <!-- Scripts -->
 </head>

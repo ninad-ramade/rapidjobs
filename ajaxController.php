@@ -4,7 +4,7 @@ session_start();
 require_once $_SERVER['DOCUMENT_ROOT'] . '/' . 'config.php';
 require_once rootpath . 'controllers/SignUpController.php';
 require_once rootpath . 'controllers/JobsController.php';
-$allowedActions = ['signUp', 'login', 'logout', 'uploadResume', 'hotjobs'];
+$allowedActions = ['signUp', 'login', 'logout', 'uploadResume', 'hotjobs', 'jobSearch'];
 $input = json_decode(file_get_contents('php://input'), true);
 if(empty($input)) {
    $input = $_POST; 
@@ -37,6 +37,11 @@ switch (strtolower($input['action'])) {
     case 'hotjobs':
         $jobsController = new JobsController();
         $hotJobsResponse = $jobsController->getHotJobs();
+        echo json_encode($hotJobsResponse);exit;
+        break;
+    case 'jobsearch':
+        $jobsController = new JobsController();
+        $hotJobsResponse = $jobsController->getJobs($input);
         echo json_encode($hotJobsResponse);exit;
         break;
     default:

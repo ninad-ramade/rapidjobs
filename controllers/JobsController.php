@@ -16,5 +16,10 @@ class JobsController {
         return $hotJobsResponse;
     }
     
+    public function getJobs($input) {
+        $hotJobsResponse = $this->model->getJobs($input);
+        return $hotJobsResponse;
+    }
+    
 }
 ?>
