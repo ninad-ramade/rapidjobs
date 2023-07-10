@@ -25,6 +25,7 @@ class JobsModel extends Database {
             $skills = $this->fetchAll($query);
             $eachJob['worklocation'] = implode(', ', array_column($locations, 'location'));
             $eachJob['JobDescription'] = !empty($eachJob['JobDescription']) ? (strlen($eachJob['JobDescription']) > 70 ? substr(strip_tags($eachJob['JobDescription']), 0, 70) . '...' : strip_tags($eachJob['JobDescription'])) : '';
+            $eachJob['JobDescription'] = html_entity_decode($eachJob['JobDescription']);
             $eachJob['skills'] = array_column($skills, 'skill');
             $eachJob['reqdate'] = $this->time_elapsed_string($eachJob['reqdate']);
         }
