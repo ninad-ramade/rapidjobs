@@ -63,7 +63,6 @@ class JobsModel extends Database {
     public function getJobs($input) {
         $query = "SELECT vendor_req.*, vendor_clients.clientname FROM vendor_req LEFT JOIN vendor_clients ON vendor_req.CLIENTID = vendor_clients.clientid WHERE Role like '%" . $input['jobTitle'] . "%' AND vendor_req.Active = 'Y' ORDER BY reqdate DESC";
         $jobs = $this->fetchAll($query);
-        var_dump($jobs);exit;
         $this->formatJobs($jobs);
         $this->response['status'] = 1;
         $this->response['data'] = ['jobs' => $jobs];
