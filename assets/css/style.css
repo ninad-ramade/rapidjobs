@@ -19195,6 +19195,9 @@ strong {
 	color: #777;
     min-height: 25px;
 }
+.job-desc {
+    min-height: 55px;
+}
 .hot-skills span:not(:first-child):before{content:'\00B7';margin:0px 10px;}
 .company-name {
 	font-size: 16px;

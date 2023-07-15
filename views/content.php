@@ -223,7 +223,7 @@
                                     </a>
                                     <p class="twm-job-address company-name">{{job.clientname}}</p>
                                     <p><i class="feather-briefcase"></i> Min. {{job.relavantexp}} Yrs <span class="text-separator-custom">|</span> &#8377; {{job.BUDGETFROM}} - {{job.BUDGETTO}} Lacs PA <span class="text-separator-custom">|</span> <i class="feather-map-pin"></i> {{job.worklocation}}</p>
-                                    <p><i class="feather-file-text"></i> {{job.JobDescription}}</p>
+                                    <p class="job-desc"><i class="feather-file-text" ng-if="job.JobDescription"></i> {{job.JobDescription}}</p>
                                     <p class="hot-skills"><span ng-repeat="skill in job.skills">{{skill}}</span></p>
                                     <?php /* ?><a href="#" class="twm-job-websites site-text-primary">https://www.Rapidjobs.com</a><?php */ ?>
                                 </div>
