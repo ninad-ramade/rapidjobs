@@ -216,7 +216,7 @@
                                     <img src="assets/images/jobs-company/pic1.jpg" alt="#">
                                 </div>
                                 <?php */ ?>
-                                <div class="twm-jobs-category green" ng-if="job.badge"><span ng-class="{{job.badgeClass}}">{{job.badge}}</span></div>
+                                <div class="twm-jobs-category green" ng-if="job.badge"><span ng-class="job.badgeClass">{{job.badge}}</span></div>
                                 <div class="twm-mid-content">
                                     <a href="#" class="twm-job-title">
                                         <h4>{{job.Role}}</h4>
