@@ -2,7 +2,7 @@
 <div class="page-content" ng-controller="jobSearchController">
 
     <!--Banner Start-->
-    <div class="twm-home3-banner-section site-bg-white bg-cover" style="background-image:url('assets/images/home-3/banner1.jpg');background-position: 0px -120px;">
+    <div class="twm-home3-banner-section site-bg-white bg-cover" style="background: #1967d2;">
         <div class="twm-home3-inner-section">
             <div class="twm-bnr-mid-section">
                 <div class="twm-bnr-discription"></div>
