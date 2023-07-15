@@ -2,21 +2,19 @@
 <div class="page-content" ng-controller="jobSearchController">
 
     <!--Banner Start-->
-    <div class="twm-home3-banner-section site-bg-white bg-cover" ng-hide="jobsearch" style="background-image:url('assets/images/home-3/banner1.jpg')">
+    <div class="twm-home3-banner-section site-bg-white bg-cover" ng-hide="jobsearch" style="background-image:url('assets/images/home-3/banner1.jpg');background-position: 0px -120px;">
         <div class="twm-home3-inner-section">
             <div class="twm-bnr-mid-section">
-                <div class="twm-bnr-title-large">Find Top IT Jobs</div>
-                <div class="twm-bnr-title-light">For talent Developers</div>
-                <div class="twm-bnr-discription">Type your keyword, then click search to find your perfect job.</div>
+                <div class="twm-bnr-discription"></div>
 
                 <div class="twm-bnr-search-bar">
                     <form>
                         <div class="row">
                             <!--Title-->
-                            <div class="form-group col-xl-6 col-lg-6 col-md-6">
-                                <label>What</label>
+                            <div class="form-group col-xl-10 col-lg-10 col-md-10">
+                                <label>Job Title</label>
                                 <div class="twm-inputicon-box">
-                                	<input name="jobTitle" type="text" ng-model="jobSearch.jobTitle.value" class="form-control" placeholder="Job Title">
+                                	<input name="jobTitle" type="text" ng-model="jobSearch.jobTitle.value" class="form-control" placeholder="Type your keyword, then click search to find your perfect job.">
                                	</div>
                             </div>
 
@@ -34,6 +32,7 @@
                             </div>
                             <?php */ ?>
                             <!--Location-->
+                            <?php /* ?>
                             <div class="form-group col-xl-4 col-lg-4 col-md-4">
                                 <label>Location</label>
                                 <div class="twm-inputicon-box">
@@ -41,7 +40,7 @@
                                     <i class="twm-input-icon fas fa-map-marker-alt"></i>
                                 </div>
                             </div>
-
+                            <?php */ ?>
                             <!--Find job btn-->
                             <div class="form-group col-xl-2 col-lg-6 col-md-6">
                                 <button type="button" class="site-button" ng-click="getJobs()">Find Job</button>
@@ -50,205 +49,20 @@
                         </div>
                     </form>
                 </div>
-
-                <div class="twm-bnr-popular-search">
-                    <span class="twm-title">Popular Searches:</span>
-                    <a href="#">Developer</a> ,
-                    <a href="#">Designer</a> ,
-                    <a href="#">Architect</a> ,
-                    <a href="#">Engineer</a> ...
-                </div>
-            </div>
-            <div class="twm-bnr-bottom-section">
-                <div class="twm-browse-jobs">7,000+ Browse Jobs</div>
-                <div class="twm-bnr-blocks-wrap">
-                    <!--icon-block-1-->
-                    <div class="twm-bnr-blocks twm-bnr-blocks-position-1">
-                        <div class="twm-content">
-                            <div class="tw-count-number text-clr-pink">
-                                <span class="counter">12</span>K+
-                            </div>
-                            <p class="icon-content-info">Companies Jobs</p>
-                        </div>
-                    </div>
-
-                    <!--icon-block-2-->
-                    <div class="twm-bnr-blocks twm-bnr-blocks-position-2">
-                        <div class="twm-content">
-                            <div class="tw-count-number text-clr-yellow">
-                                <span class="counter">98</span> +
-                            </div>
-                            <p class="icon-content-info">Job For Countries </p>
-                        </div>
-                    </div>
-
-                    <!--icon-block-3-->
-                    <div class="twm-bnr-blocks-3 twm-bnr-blocks-position-3">
-                        <div class="twm-pics">
-                            <span><img src="assets/images/main-slider/slider1/user/u-1.jpg" alt=""></span>
-                            <span><img src="assets/images/main-slider/slider1/user/u-2.jpg" alt=""></span>
-                            <span><img src="assets/images/main-slider/slider1/user/u-3.jpg" alt=""></span>
-                            <span><img src="assets/images/main-slider/slider1/user/u-4.jpg" alt=""></span>
-                            <span><img src="assets/images/main-slider/slider1/user/u-5.jpg" alt=""></span>
-                            <span><img src="assets/images/main-slider/slider1/user/u-6.jpg" alt=""></span>
-                        </div>
-                        <div class="twm-content">
-                            <div class="tw-count-number text-clr-green">
-                                <span class="counter">3</span>K+
-                            </div>
-                            <p class="icon-content-info">Jobs Done</p>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
         
     </div>
     <!--Banner End-->
 
-    <!-- TOP COMPANIES START -->
-    <div class="section-full p-t120 p-b90 site-bg-white twm-companies-wrap" ng-hide="jobsearch">
-          
-        <!-- TITLE START-->
-        <div class="section-head center wt-small-separator-outer">
-            <div class="wt-small-separator site-text-primary">
-               <div>Top Companies</div>                                
-            </div>
-            <h2 class="wt-title">Get hired in top companies</h2>
-        </div>                  
-        <!-- TITLE END-->
-
-        <div class="container">
-            <div class="section-content">
-                <div class="owl-carousel home-client-carousel3 owl-btn-vertical-center">
-                
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w1.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w2.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w3.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w4.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w5.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w6.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w1.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w2.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w3.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                    <div class="item">
-                        <div class="ow-client-logo">
-                            <div class="client-logo client-logo-media">
-                            <a href="#"><img src="assets/images/client-logo2/w5.png" alt=""></a></div>
-                        </div>
-                    </div>
-                    
-                </div>
-            </div>
-            <div class="twm-company-approch2-outer">
-                <div class="twm-company-approch2">
-                    <div class="row">
-
-                        <!--block 1-->
-                        <div class="col-lg-4 col-md-4">
-                            <div class="counter-outer-two">
-                                <div class="icon-content">
-                                    <div class="tw-count-number site-text-black">
-                                        <span class="counter">5</span>M+</div>
-                                    <p class="icon-content-info">Million daily active users</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--block 2-->
-                        <div class="col-lg-4 col-md-4">
-                            <div class="counter-outer-two">
-                                <div class="icon-content">
-                                    <div class="tw-count-number site-text-black">
-                                        <span class="counter">9</span>K+</div>
-                                    <p class="icon-content-info">Open job positions</p>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!--block 3-->
-                        <div class="col-lg-4 col-md-4">
-                            <div class="counter-outer-two">
-                                <div class="icon-content">
-                                    <div class="tw-count-number site-text-black">
-                                        <span class="counter">2</span>M+</div>
-                                    <p class="icon-content-info">Million stories shared</p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </div>
-                </div>
-            </div>
-        </div>
-    
-    </div>
-    <!-- TOP COMPANIES END -->
 
     <!-- HOW IT WORK SECTION START -->
-    <div class="section-full p-t120 p-b90 site-bg-gray twm-how-it-work-area" ng-hide="jobsearch">
+    <div class="section-full p-t30 site-bg-gray twm-how-it-work-area" ng-hide="jobsearch">
                 
         <div class="container">
 
             <!-- TITLE START-->
             <div class="section-head center wt-small-separator-outer">
-                <div class="wt-small-separator site-text-primary">
-                   <div>Working Process</div>                                
-                </div>
                 <h2 class="wt-title">How It Works</h2>
                 
             </div>                  
@@ -259,7 +73,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="twm-w-process-steps3">
                             <div class="twm-w-pro-top">
-                                <span class="twm-large-number  text-clr-sky">01</span>
+                                <span class="twm-large-number  text-clr-sky">1</span>
                                 <div class="twm-media bg-clr-sky">
                                     <span><img src="assets/images/work-process/icon1.png" alt="icon1"></span>
                                 </div>
@@ -272,7 +86,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="twm-w-process-steps3">
                             <div class="twm-w-pro-top">
-                                <span class="twm-large-number text-clr-pink">02</span>
+                                <span class="twm-large-number text-clr-pink">2</span>
                                 <div class="twm-media bg-clr-pink">
                                     <span><img src="assets/images/work-process/icon2.png" alt="icon1"></span>
                                 </div>
@@ -285,7 +99,7 @@
                     <div class="col-xl-4 col-lg-6 col-md-6">
                         <div class="twm-w-process-steps3">
                             <div class="twm-w-pro-top">
-                                <span class="twm-large-number  text-clr-green">03</span>
+                                <span class="twm-large-number  text-clr-green">3</span>
                                 <div class="twm-media  bg-clr-green">
                                     <span><img src="assets/images/work-process/icon3.png" alt="icon1"></span>
                                 </div>
@@ -369,7 +183,7 @@
     <!-- FEATURED SECTION END -->
 
     <!-- JOB POST START -->
-    <div class="section-full p-t120 p-b90 site-bg-gray twm-bg-ring-wrap2">
+    <div class="section-full p-b30 site-bg-gray twm-bg-ring-wrap2">
         <div class="twm-bg-ring-right"></div>
         <div class="twm-bg-ring-left"></div>
         <div class="container">
@@ -380,7 +194,7 @@
                         <!-- TITLE START-->
                         <div class="section-head left wt-small-separator-outer">
                             <div class="wt-small-separator site-text-primary">
-                            <div ng-class="jobsearch ? 'font24' : ''">{{jobsearch ? jobSearch.jobTitle.value + ' Jobs' : 'All Job Posts'}}</div>                                
+                            <div ng-class="jobsearch ? 'font24' : ''">{{jobsearch ? jobSearch.jobTitle.value + ' Jobs' : 'Hot Jobs'}}</div>                                
                             </div>
                             <h2 class="wt-title" ng-hide="jobsearch">Find Your Career You Deserve it</h2>
                         </div>                  
@@ -494,6 +308,98 @@
     </div>
     <!-- JOB POST END -->
 
+    <!-- TOP COMPANIES START -->
+    <div class="section-full p-t30 p-b60 site-bg-white twm-companies-wrap" ng-hide="jobsearch">
+          
+        <!-- TITLE START-->
+        <div class="section-head center wt-small-separator-outer">
+            <div class="wt-small-separator site-text-primary">
+               <div>Top Companies</div>                                
+            </div>
+            <h2 class="wt-title">Get hired in top companies</h2>
+        </div>                  
+        <!-- TITLE END-->
+
+        <div class="container">
+            <div class="section-content">
+                <div class="owl-carousel home-client-carousel3 owl-btn-vertical-center">
+                
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w1.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w2.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w3.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w4.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w5.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w6.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w1.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w2.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w3.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                    <div class="item">
+                        <div class="ow-client-logo">
+                            <div class="client-logo client-logo-media">
+                            <a href="#"><img src="assets/images/client-logo2/w5.png" alt=""></a></div>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+    
+    </div>
+    <!-- TOP COMPANIES END -->
     <!-- CANDIDATES START -->
     <?php /* ?>
     <div class="section-full p-t120 p-b90 site-bg-white">

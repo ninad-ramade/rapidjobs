@@ -30,13 +30,12 @@
                     
                     <div class="widget widget_about">
                         <div class="logo-footer clearfix">
-                            <a href="#"><img src="assets/images/logo-light.png" alt=""></a>
+                            <a href="/"><strong>RapidJobs</strong></a>
                         </div>
-                        <p>Many desktop publishing packages and web page editors now.</p>
                         <ul class="ftr-list">
                             <li><p><span>Address :</span>Hi-Tech City, Hyderabad,Telangana,India. </p></li>
-                            <li><p><span>Email :</span>info@rapidjobs.com</p></li>
-                            <li><p><span>Call :</span>555-555-1234</p></li>
+                            <li><p><span>Email :</span><a href="mailto:info@rapidjobs.com">info@rapidjobs.com</a></p></li>
+                            <li><p><span>Call :</span><a href="tel:+915555551234">555-555-1234</a></p></li>
                         </ul>
                     </div>                            
                     
@@ -109,7 +108,7 @@
             <div class="footer-bottom-info">
             
                 <div class="footer-copy-right">
-                    <span class="copyrights-text">Copyright © 2022 by Rapid Technologies All Rights Reserved.</span>
+                    <span class="copyrights-text">Copyright © <?php echo date('Y'); ?> by Rapid Technologies All Rights Reserved.</span>
                 </div>
                 <ul class="social-icons">
                     <li><a href="javascript:void(0);" class="fab fa-facebook-f"></a></li>

@@ -26,7 +26,7 @@
                 <div class="nav-animation header-nav navbar-collapse collapse d-flex justify-content-center">
 
                     <ul class=" nav navbar-nav">
-                        <li class="has-child"><a href="{{ url('/')">Home</a>                                                          
+                        <li class="has-child"><a href="/">Home</a>                                                          
                         </li>
                         <li class="has-child"><a href="javascript:;">Jobs</a>
                             <ul class="sub-menu">
@@ -98,15 +98,6 @@
                                 <li><a href="#">Chat</a></li>
                             </ul>                                                                
                         </li>
-                        <li class="has-child"><a href="javascript:;">Blog</a>
-                            <ul class="sub-menu">
-                                <li><a href="#">Blog</a></li>                                        
-                                <li><a href="#">Blog Grid</a></li>
-                                <li><a href="#">Blog Grid-2</a></li>                                        
-                                <li><a href="#">Blog List</a></li>
-                                <li><a href="#">Blog Detail</a></li>                                        
-                            </ul>                                
-                        </li>
                     </ul>
 
                 </div>
@@ -114,9 +105,11 @@
                 <!-- Header Right Section-->
                 <div class="extra-nav header-2-nav">
                     <div class="extra-cell">
+                    	<?php /* ?>
                         <div class="header-search">
                             <a href="#search" class="header-search-icon"><i class="feather-search"></i></a>
-                        </div>                                
+                        </div>
+                        <?php */ ?>                             
                     </div>
                     <div class="extra-cell">
                         <div class="header-nav-btn-section" ng-controller="logoutController">
