@@ -31,7 +31,11 @@ class JobsModel extends Database {
             $eachJob['JobDescription'] = !empty($eachJob['JobDescription']) ? (strlen($eachJob['JobDescription']) > 70 ? substr(strip_tags($eachJob['JobDescription']), 0, 70) . '...' : strip_tags($eachJob['JobDescription'])) : '';
             $eachJob['JobDescription'] = trim(html_entity_decode($eachJob['JobDescription']));
             $eachJob['skills'] = array_column($skills, 'skill');
-            $eachJob['reqdate'] = $this->time_elapsed_string($eachJob['reqdate']);
+            $eachJob['reqdateago'] = $this->time_elapsed_string($eachJob['reqdate']);
+            $date1 = date_create($eachJob['reqdate']);
+            $date2 = date_create(date('Y-m-d'));
+            $diff=date_diff($date1,$date2);
+            $eachJob['badge'] = !empty($eachJob['TYPEOFASSIGNMENT']) ? $eachJob['TYPEOFASSIGNMENT'] : ($diff->days <= 30 ? 'New' : '');
         }
         return $jobs;
     }

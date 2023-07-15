@@ -216,7 +216,7 @@
                                     <img src="assets/images/jobs-company/pic1.jpg" alt="#">
                                 </div>
                                 <?php */ ?>
-                                <div class="twm-jobs-category green"><span class="twm-bg-green">New</span></div>
+                                <div class="twm-jobs-category green" ng-if="job.badge"><span class="twm-bg-green">{{job.badge}}</span></div>
                                 <div class="twm-mid-content">
                                     <a href="#" class="twm-job-title">
                                         <h4>{{job.Role}}</h4>
@@ -228,7 +228,7 @@
                                     <?php /* ?><a href="#" class="twm-job-websites site-text-primary">https://www.Rapidjobs.com</a><?php */ ?>
                                 </div>
                                 <div class="twm-right-content">
-                                    <span class="time-ago">{{job.reqdate}}</span>
+                                    <span class="time-ago">{{job.reqdateago}}</span>
                                     <?php /* ?><a href="#" class="twm-jobs-browse site-text-primary">Browse Job</a><?php */ ?>
                                     <button type="button" class="site-button site-button-small">Apply</button>
                                 </div>
