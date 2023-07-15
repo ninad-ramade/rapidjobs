@@ -35,7 +35,8 @@ class JobsModel extends Database {
             $date1 = date_create($eachJob['reqdate']);
             $date2 = date_create(date('Y-m-d'));
             $diff=date_diff($date1,$date2);
-            $eachJob['badge'] = !empty($eachJob['TYPEOFASSIGNMENT']) ? $eachJob['TYPEOFASSIGNMENT'] : ($diff->days <= 30 ? 'New' : '');
+            $eachJob['badge'] = !empty($eachJob['TYPEOFASSIGNMENT']) ? ucwords(strtolower($eachJob['TYPEOFASSIGNMENT'])) : ($diff->days <= 30 ? 'New' : 'New');
+            $eachJob['badgeClass'] = strtolower($eachJob['badge']) == 'permanent' ? 'twm-bg-purple' : (strtolower($eachJob['badge']) == 'contract' ? 'twm-bg-brown' : 'twm-bg-green');
         }
         return $jobs;
     }
