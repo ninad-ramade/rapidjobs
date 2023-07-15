@@ -10,11 +10,12 @@ app.controller('jobSearchController', function jobSearchController($scope, Valid
 	$scope.jobsearch = false;
 	$scope.getJobs = function() {
 		$scope.jobs = {};
-		document.getElementsByTagName('header')[0].classList.add('classic-header');
+		document.getElementById('jobs-section').classList.add('p-t30');
 		$scope.jobsearch = true;
 		var url = baseUrl + 'ajaxController.php';
 		var action = 'jobSearch';
-		ajaxService.post(url, {action: action, jobTitle: $scope.jobSearch.jobTitle.value, jobLocation: $scope.jobSearch.jobLocation.value}, null, null, true).then(function (response) {
+		$scope.jobParams = {action: action, jobTitle: $scope.jobSearch.jobTitle.value, jobLocation: $scope.jobSearch.jobLocation.value};
+		ajaxService.post(url, $scope.jobParams, null, null, true).then(function (response) {
             if (response.status !== 200) {
                 return false;
             }

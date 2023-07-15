@@ -2,7 +2,7 @@
 <div class="page-content" ng-controller="jobSearchController">
 
     <!--Banner Start-->
-    <div class="twm-home3-banner-section site-bg-white bg-cover" ng-hide="jobsearch" style="background-image:url('assets/images/home-3/banner1.jpg');background-position: 0px -120px;">
+    <div class="twm-home3-banner-section site-bg-white bg-cover" style="background-image:url('assets/images/home-3/banner1.jpg');background-position: 0px -120px;">
         <div class="twm-home3-inner-section">
             <div class="twm-bnr-mid-section">
                 <div class="twm-bnr-discription"></div>
@@ -183,7 +183,7 @@
     <!-- FEATURED SECTION END -->
 
     <!-- JOB POST START -->
-    <div class="section-full p-b30 site-bg-gray twm-bg-ring-wrap2">
+    <div class="section-full p-b30 site-bg-gray twm-bg-ring-wrap2" id="jobs-section">
         <div class="twm-bg-ring-right"></div>
         <div class="twm-bg-ring-left"></div>
         <div class="container">
@@ -194,7 +194,7 @@
                         <!-- TITLE START-->
                         <div class="section-head left wt-small-separator-outer">
                             <div class="wt-small-separator site-text-primary">
-                            <div ng-class="jobsearch ? 'font24' : ''">{{jobsearch ? jobSearch.jobTitle.value + ' Jobs' : 'Hot Jobs'}}</div>                                
+                            <div ng-class="jobsearch ? 'font24' : ''">{{jobsearch ? jobParams.jobTitle + ' Jobs' : 'Hot Jobs'}}</div>                                
                             </div>
                             <h2 class="wt-title" ng-hide="jobsearch">Find Your Career You Deserve it</h2>
                         </div>                  
